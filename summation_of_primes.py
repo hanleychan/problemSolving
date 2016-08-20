@@ -7,7 +7,7 @@ import math
 def is_prime(n):
     """ Returns whether n is a prime number """
     
-    for i in range(2, int(math.sqrt(n)) + 1): # every non-prime is divisible by a prime <= sqrt(number)
+    for i in range(2, int(math.sqrt(n)) + 1): # every non-prime # is divisible by a prime <= sqrt(#)
         if n % i == 0:
             return False
     else:

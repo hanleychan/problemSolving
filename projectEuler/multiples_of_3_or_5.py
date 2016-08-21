@@ -8,10 +8,11 @@ def multiple_of_3_or_5(n):
         return True
     return False
 
-result = 0
-for i in range(1, 1000):
-    if multiple_of_3_or_5(i):
-        result += i
+if __name__ == "__main__":
+    result = 0
+    for i in range(1, 1000):
+        if multiple_of_3_or_5(i):
+            result += i
 
-print(result)
+    print(result)
 

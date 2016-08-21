@@ -16,13 +16,14 @@ def fibonacci(n):
     else:
         return fibonacci(n-1) + fibonacci(n-2)
 
-result = 0
-index = 1
+if __name__ == "__main__":
+    result = 0
+    index = 1
 
-while fibonacci(index) < 4000000:
-    if is_even(fibonacci(index)):
-        result += fibonacci(index)
+    while fibonacci(index) < 4000000:
+        if is_even(fibonacci(index)):
+            result += fibonacci(index)
 
-    index += 1
+        index += 1
 
-print(result)
+    print(result)

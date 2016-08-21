@@ -2,14 +2,15 @@
 Find the smallest positive number that is evenly divisible by all the numbers from 1 to 20
 """
 
-number = 20
+if __name__ == "__main__":
+    number = 20
 
-while True:
-    for i in range(2, 21):
-        if number % i != 0:
+    while True:
+        for i in range(2, 21):
+            if number % i != 0:
+                break
+        else:
             break
-    else:
-        break
-    number += 20
+        number += 20
 
-print(number)
+    print(number)

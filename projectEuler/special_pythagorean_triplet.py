@@ -29,8 +29,9 @@ def find_abc_pythagorean(perimeter):
     else: # No value found
         return False
 
-result = find_abc_pythagorean(1000)
+if __name__ == "__main__":
+    result = find_abc_pythagorean(1000)
 
-if result:
-    print(result[0] * result[1] * result[2])
+    if result:
+        print(result[0] * result[1] * result[2])
 

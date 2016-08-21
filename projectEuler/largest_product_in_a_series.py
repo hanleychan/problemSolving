@@ -55,12 +55,13 @@ def multiply_digits(n):
 
     return result
 
-current_largest_product = 0
+if __name__ == "__main__":
+    current_largest_product = 0
 
-for i in range(1001-13):
-    product_of_digits = multiply_digits(number[i:i+13])
+    for i in range(1001-13):
+        product_of_digits = multiply_digits(number[i:i+13])
 
-    if product_of_digits > current_largest_product:
-        current_largest_product = product_of_digits
+        if product_of_digits > current_largest_product:
+            current_largest_product = product_of_digits
 
-print(current_largest_product)
+    print(current_largest_product)

@@ -83,34 +83,33 @@ def can_multiply_diag_down_right(x, y):
     else:
         return False
 
+if __name__ == "__main__":
+    locations = {}
+    index = 0
+    for row in range(num_rows):
+        for col in range(num_cols):
+            locations[row, col] = int(number_list[index])
+            index += 1
 
-locations = {}
-index = 0
-for row in range(num_rows):
-    for col in range(num_cols):
-        locations[row, col] = int(number_list[index])
-        index += 1
+    largest = 0
 
+    for x in range(20):
+        for y in range(20):
+            if can_multiply_right(x):
+                result = locations[x,y] * locations[x+1,y] * locations[x+2,y] * locations[x+3,y]
+                if result > largest:
+                    largest = result
+            if can_multiply_down(y):
+                result = locations[x,y] * locations[x,y+1] * locations[x,y+2] * locations[x,y+3]
+                if result > largest:
+                    largest = result
+            if can_multiply_diag_down_left(x,y):
+                result = locations[x,y] * locations[x-1, y+1] * locations[x-2, y+2] * locations[x-3, y+3]
+                if result > largest:
+                    largest = result
+            if can_multiply_diag_down_right(x,y):
+                result = locations[x,y] * locations[x+1, y+1] * locations[x+2, y+2] * locations[x+3, y+3]
+                if result > largest:
+                    largest = result
 
-largest = 0
-
-for x in range(20):
-    for y in range(20):
-        if can_multiply_right(x):
-            result = locations[x,y] * locations[x+1,y] * locations[x+2,y] * locations[x+3,y]
-            if result > largest:
-                largest = result
-        if can_multiply_down(y):
-            result = locations[x,y] * locations[x,y+1] * locations[x,y+2] * locations[x,y+3]
-            if result > largest:
-                largest = result
-        if can_multiply_diag_down_left(x,y):
-            result = locations[x,y] * locations[x-1, y+1] * locations[x-2, y+2] * locations[x-3, y+3]
-            if result > largest:
-                largest = result
-        if can_multiply_diag_down_right(x,y):
-            result = locations[x,y] * locations[x+1, y+1] * locations[x+2, y+2] * locations[x+3, y+3]
-            if result > largest:
-                largest = result
-
-print(largest)
+    print(largest)

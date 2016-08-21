@@ -18,10 +18,10 @@ def can_be_made_by_multiplying_3_digit_numbers(n):
     else:
         return False
 
-
-for i in range((100*100), (999*999)+1)[::-1]:
-    if is_palindrome_number(i):
-        if can_be_made_by_multiplying_3_digit_numbers(i):
-            print(i)
-            break
+if __name__ == '__main__':
+    for i in range((100*100), (999*999)+1)[::-1]:
+        if is_palindrome_number(i):
+            if can_be_made_by_multiplying_3_digit_numbers(i):
+                print(i)
+                break
 

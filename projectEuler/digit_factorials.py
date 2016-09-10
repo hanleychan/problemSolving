@@ -15,7 +15,7 @@ def factorial(n):
 
 
 if __name__ == "__main__":
-    upper_bound = factorial(9) * 7 # 2540160, 10^(d-1) <= n <= 9!d
+    upper_bound = factorial(9) * 7 # 2540160, 10^(d-1) <= n <= 9!d, 7 is the largest value that satisfies d
 
     results = []
 

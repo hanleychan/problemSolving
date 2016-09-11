@@ -6,7 +6,7 @@ product of an integer with (1,2,...,n) where n > 1
 from math import sqrt
 
 def is_pandigital(n):
-    """ Returns whether a number is pandigital """
+    """ Returns whether a number is 1 through 9 pandigital """
     number_string = str(n)
     number_list = [int(x) for x in number_string]
 

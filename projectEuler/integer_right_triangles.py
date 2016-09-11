@@ -6,28 +6,19 @@ If p is the perimeter of a right angle triangle with integral length sides, {a,b
 For which value of p ≤ 1000, is the number of solutions maximised?
 """
 
+from math import sqrt
+
 def get_num_solutions(perimeter):
     """ Returns the number of solution combinations given a perimiter of a right triangle """
-    a, b, c = 1, 1, 1
     solutions = []
+    for a in range(1, perimeter):
+        # from a^2+b^2=c^2 and p=a+b+c, b = (perimeter(perimeter - 2a)) / (2(perimeter - a))
+        b = (perimeter * (perimeter - (2 * a))) / (2 * (perimeter - a))
+        if b == int(b) and b > 0:
+            c = sqrt(a**2 + b**2)
 
-    while a <= perimeter: # Loop through all possible values of a
-        old_b = b
-
-        while b <= perimeter - a: # Loop through all possible values of b
-            c = perimeter - b - a
-            
-            if a*a + b*b == c*c and (b,a,c) not in solutions:
-                solutions.append((a,b,c))
-            
-            if b + 1 <= perimeter - a:
-                b += 1     
-            else:
-                break
-
-        a += 1
-        b = old_b 
-        c = 1
+            if (int(b), a, int(c)) not in solutions:
+                solutions.append((a,int(b),int(c)))
 
     return len(solutions)
 

@@ -16,16 +16,15 @@ def find_abc_pythagorean(perimeter):
             
             if a*a + b*b == c*c:
                 return a,b,c 
-            
 
-            if b+1 <= perimeter - a:
-                b+=1     
+            if b + 1 <= perimeter - a:
+                b += 1     
             else:
                 break
 
         a += 1
         b = old_b 
-        c=1
+        c = 1
     else: # No value found
         return False
 
@@ -34,4 +33,3 @@ if __name__ == "__main__":
 
     if result:
         print(result[0] * result[1] * result[2])
-
